@@ -1,0 +1,48 @@
+.main-container {
+    max-width: 1320px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    @include xl { 
+        max-width: 1140px;
+    } 
+    
+    @include lg { 
+        max-width: 960px;
+    } 
+
+    @include md { 
+        max-width: 720px;
+    }
+
+    @include sm { 
+        max-width: 540px;
+    }
+       
+}
+
+
+.main-container-grid {
+    display: grid;
+    grid-template-columns: [full-start] minmax(15px, 1fr) [center-start] repeat(12, [col-start] minmax(20px, 110px) [col-end]) [center-end] minmax(15px, 1fr) [full-end]; 
+
+    @include xl {
+        grid-template-columns: [full-start] minmax(15px, 1fr) [center-start] repeat(12, [col-start] minmax(20px, 95px) [col-end]) [center-end] minmax(15px, 1fr) [full-end]; 
+    }    
+    @include lg { 
+        grid-template-columns: [full-start] minmax(15px, 1fr) [center-start] repeat(12, [col-start] minmax(20px, 80px) [col-end]) [center-end] minmax(15px, 1fr) [full-end]; 
+    }
+    @include md { 
+        grid-template-columns: [full-start] minmax(15px, 1fr) [center-start] repeat(12, [col-start] minmax(20px, 60px) [col-end]) [center-end] minmax(15px, 1fr) [full-end]; 
+    }
+    @include sm { 
+        grid-template-columns: [full-start] minmax(0, 1fr) [center-start] repeat(12, [col-start] minmax(20px, 45px) [col-end]) [center-end] minmax(0, 1fr) [full-end]; 
+    }
+
+    .wrapper {
+        grid-column: center-start / center-end;
+        padding: 0 15px;
+    }
+}

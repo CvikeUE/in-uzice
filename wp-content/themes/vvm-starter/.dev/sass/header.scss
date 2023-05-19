@@ -1,0 +1,143 @@
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $white;
+    position: relative;
+    box-shadow: 0 3px 15px #00000008; 
+    min-height: 60px;
+    z-index: 99996;
+
+    &--scrolled {
+        transform: translateY(-100%);
+        transition: .3s transform ease;
+    }
+
+    &--shrinked {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 9999;
+        transform: translateY(0);
+    }
+
+    .logo-wrapper {
+        max-width: 158px;
+        flex: 0 1 158px;
+        margin-left: 30px;
+        margin-right: 50px;
+    }
+
+    .logo-link {
+        display: block;
+
+        img {
+            display: block;  
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+}
+
+.hamburger-switch {
+    position: absolute;
+    width: 24px;
+    height: 16px;
+    transform: rotate(0deg) translateY(-50%);
+    transition: 0.5s ease-in-out;    
+    top: 30px; 
+    right: 30px;
+    z-index: 99998;
+    cursor: pointer;
+    @media (min-width: 993px) {
+        display: none;
+    }
+    
+    span {
+        display: block;
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        background: $black;
+        opacity: 1;
+        left: 0;
+        transform: rotate(0deg);
+        transition: 0.25s ease-in-out;
+        &:nth-child(1) {
+            top: 0px;
+        }
+        &:nth-child(2),
+        &:nth-child(3) {
+            top: 7px;
+        }
+        &:nth-child(4) {
+            top: 14px;
+        }
+    }
+    &.open span {
+        background-color: $white;
+    }
+    &.open span:nth-child(1) {
+        top: 18px;
+        width: 0%;
+        left: 50%;
+    }
+    &.open span:nth-child(2) {
+        transform: rotate(45deg);
+    }
+
+    &.open span:nth-child(3) {
+        transform: rotate(-45deg);
+    }
+
+    &.open span:nth-child(4) {
+        top: 18px;
+        width: 0%;
+        left: 50%;
+    }
+}
+
+body.body--scrolled {
+    .hamburger-switch {
+        position: fixed;
+        opacity: 0;
+        visibility: none;
+        transform: translateY(-100%);
+        transition: none;
+    }
+}
+
+body.body-shrinked {
+    .hamburger-switch {
+        top: 30px;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(-50%);
+        transition: .3s all ease;
+        transition-delay: .1s;
+    }
+}  
+
+body.admin-bar {
+    .site-header--shrinked {
+        top: 32px;
+
+        @media screen and (max-width: 782px) {
+            top: 46px;
+        } 
+    }
+
+    &.body-shrinked {
+        .hamburger-switch {
+            top: 61px;
+
+            @media screen and (max-width: 782px) {
+                top: 76px;
+            }
+        }
+    }
+} 
+
+

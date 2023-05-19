@@ -1,0 +1,22 @@
+.error-404 {
+    padding: 60px 0;
+
+    header {
+        text-align: center;
+
+        .button {
+            margin-top: 15px;
+        }
+    }
+
+    .error-404-img-wrapper {
+        max-width: 500px;
+        margin: 0 auto;
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+    }
+}

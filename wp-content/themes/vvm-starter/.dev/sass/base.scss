@@ -1,0 +1,46 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    position: relative;
+    color: $text;
+
+    &.body-shrinked {
+        padding-top: 60px;
+    }
+
+    &.mobile-navigation-active {
+        overflow-y: hidden;
+    }
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.page-content {
+
+    .content {
+        padding: 100px 0;
+    }
+
+}
+
+// Fixed weird white gap on screen resolutions below 600px when admin bar is active 
+@media screen and (max-width: 600px) {
+    #wpadminbar {
+        top: -46px;
+    }
+}

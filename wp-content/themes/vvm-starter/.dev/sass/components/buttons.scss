@@ -1,0 +1,36 @@
+.button {
+    &,
+    &:link,
+    &:visited {
+      text-decoration: none;
+      padding: 10px 20px;
+      display: inline-block;
+      transition: all 0.2s;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 21px;
+      background-color: $text-dark;
+      color: $white;
+      min-width: 135px;
+      text-align: center;
+      border: none;
+      cursor: pointer;
+    }
+  
+    &:hover {
+      background-color: $text;
+    }
+  
+    &:active,
+    &:focus {
+      outline: none;
+      background-color: $text;
+    }
+  
+}
+
+  
+  
