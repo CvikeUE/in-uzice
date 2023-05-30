@@ -33,7 +33,7 @@
 <div class="page-overlay"></div>
 
 <?php
-echo "test za commit";
+
 wp_footer(); ?>
 
 </body>
